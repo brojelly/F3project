@@ -16,6 +16,8 @@
 - `wsgi.py`
 - `requirements.txt`
 - `app/__init__.py`
+- 발표자료 (5분 발표용 PPT)
+
 
 ---
 
@@ -60,12 +62,11 @@
 ### 📌 주요 역할
 - EC2 인스턴스 생성 및 접속
 - 배포 스크립트 실행 (gunicorn + nginx)
-- 발표용 PPT 제작
+
 
 ### 📁 작성 및 실행할 항목
 - `executions/` 폴더 내부 설정 파일 (`gunicorn.service`, `nginx.conf` 등)
 - `scripts/` 폴더 내부 배포 스크립트 (`ssl.sh`, `nginx.sh`, `mysql.sh`, `launch.sh`, `terminate.sh`, 등)
-- 발표자료 (5분 발표용 PPT)
 
 ---
 
