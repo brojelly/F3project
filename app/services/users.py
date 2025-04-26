@@ -4,25 +4,10 @@ from flask import abort
 
 
 def create_user(name, age, gender, email):
-    # 중복 이메일 체크
-    existing_user = User.query.filter_by(email=email).first()
-    if existing_user:
-        abort(400, description="이미 존재하는 계정 입니다.")
+    """
+    사용자를 생성하는 함수.
 
-    new_user = User(
-        name=name,
-        age=age,
-        gender=gender,
-        email=email
-    )
-
-    db.session.add(new_user)
-    db.session.commit()
-
-    return new_user.to_dict()
-
-def get_user_by_id(user_id):
-    user = User.query.get(user_id)
-    if user is None:
-        abort(404, description="유저를 찾을 수 없습니다.")
-    return user.to_dict()
+    Args:
+        name (str): 사용자 이름.
+        age (str): 사용자 나이 (Enum 값).
+        gender (str): 사용자 성별

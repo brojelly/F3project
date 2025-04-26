@@ -23,12 +23,15 @@ def create_answers(answer_data_list):
         if not Choice.query.get(choice_id):
             abort(400, description=f"Choice ID {choice_id} not found.")
 
+        # 답변 생성 및 추가
         answer = Answer(user_id=user_id, choice_id=choice_id)
         db.session.add(answer)
         created.append(answer)
 
+    # 데이터베이스 커밋
     db.session.commit()
 
+    # 응답 반환
     return {
         "message": f"User: {answer_data_list[0]['user_id']}'s answers Success Create",
         "answers": [a.to_dict() for a in created]
