@@ -1,115 +1,142 @@
-from flask import Blueprint, request, jsonify
-from app.models import User, db, Question, Choices, Answer, Image
+from flask import Blueprint, jsonify, request, session
 
-# Blueprint 정의
-routes = Blueprint("views", __name__)
+from app.models import Choices
+from app.services import answers, choices, images, questions, users
 
-# 기본 연결 확인
-@routes.route("/", methods=["GET"])
-def check_connection():
-    return jsonify({"message": "Success Connect"})
+routes = Blueprint("routes", __name__)
 
-# 메인 이미지 가져오기
+
+@routes.route("/", methods=["GET", "POST"])
+def connect():
+    if request.method == "GET":
+        return jsonify({"message": "Success Connect"})
+
 @routes.route("/image/main", methods=["GET"])
 def get_main_image():
-    return jsonify({"image": "https://example.com/image.jpg"})
+    if request.method == "GET":
+        image = images.get_main_image()
+        return jsonify({"image": image.url if image.url else None}), 200
 
-# 회원가입
-@routes.route("/signup", methods=["POST"])
-def signup():
-    data = request.get_json()
-    if User.query.filter_by(email=data["email"]).first():
-        return jsonify({"message": "이미 존재하는 계정 입니다."}), 400
-    
-    user = User(
-        name=data["name"],
-        email=data["email"],
-        age=data["age"],
-        gender=data["gender"]
-    )
-    db.session.add(user)
-    db.session.commit()
-    
-    return jsonify({"message": f"{data['name']}님 회원가입을 축하합니다", "user_id": user.id}), 200
+@routes.route("/signup", methods=["GET", "POST"])
+def signup_page():
+    if request.method == "POST":
+        try:
+            user = users.create_user()
+            return (
+                jsonify(
+                    {
+                        "message": f"{user.name}님 회원가입을 축하합니다",
+                        "user_id": user.id,
+                    }
+                ),
+                201,
+            )
 
-# 특정 질문 가져오기
-@routes.route("/questions/<int:question_id>", methods=["GET"])
-def get_question(question_id):
-    question = Question.query.get_or_404(question_id)
-    choices = [{"id": c.id, "content": c.content, "is_active": c.is_active} for c in question.choices]
-    
-    return jsonify({
-        "id": question.id,
-        "title": question.title,
-        "image": question.image_url,
-        "choices": choices
-    })
+        except ValueError:
+            return jsonify({"message": "이미 존재하는 계정 입니다."}), 400
 
-# 질문 개수 확인
-@routes.route("/questions/count", methods=["GET"])
-def get_question_count():
-    total = Question.query.count()
-    return jsonify({"total": total})
 
-# 특정 질문의 선택지 가져오기
-@routes.route("/choice/<int:question_id>", methods=["GET"])
-def get_choices(question_id):
-    question = Question.query.get_or_404(question_id)
-    choices = [{"id": c.id, "content": c.content, "is_active": c.is_active} for c in question.choices]
-    
-    return jsonify({"choices": choices})
-
-# 답변 제출
-@routes.route("/submit", methods=["POST"])
-def submit_answers():
-    data = request.get_json()
-    for answer in data:
-        user_answer = Answer(
-            user_id=answer["user_id"],
-            choice_id=answer["choice_id"]
-        )
-        db.session.add(user_answer)
-    db.session.commit()
-    
-    return jsonify({"message": f"User: {data[0]['user_id']}'s answers Success Create"})
-
-# 이미지 생성
-@routes.route("/image", methods=["POST"])
-def create_image():
-    data = request.get_json()
-    new_image = Image(url=data["url"])
-    db.session.add(new_image)
-    db.session.commit()
-    
-    return jsonify({"message": f"ID: {new_image.id} Image Success Create"})
-
-# 질문 생성
-@routes.route("/question", methods=["POST"])
-def create_question():
-    data = request.get_json()
-    new_question = Question(
-        title=data["title"],
-        image_url=data["image_url"]
-    )
-    db.session.add(new_question)
-    db.session.commit()
-    
-    return jsonify({"message": f"Title: {new_question.title} Success Create"})
-
-# 선택지 생성
-@routes.route("/choice", methods=["POST"])
-def create_choice():
-    data = request.get_json()
-    question = Question.query.get(data["question_id"])
+@routes.route("/question/<int:question_id>", methods=["GET", "POST"])
+def question_page(question_id):
+    """
+    특정 질문 ID에 대한 질문과 선택지를 반환합니다.
+    """
+    # 질문 데이터 가져오기
+    question = questions.get_question_by_id(question_id)
     if not question:
-        return jsonify({"message": "Question not found"}), 404
-    
-    new_choice = Choices(
-        content=data["content"],
-        is_active=data["is_active"],
-        question_id=question.id
+        return jsonify({"error": "질문을 찾을 수 없습니다."}), 404
+
+    # 선택지 데이터 가져오기
+    choice_list = (
+        Choices.query.filter_by(question_id=question_id, is_active=True)
+        .order_by(Choices.sqe.desc())
+        .all()
     )
-    db.session.add(new_choice)
-    db.session.commit()
-    
-    return jsonify({"message": f"Content: {new_choice.content} Success Create"})
+    choice_data = [choice.to_dict() for choice in choice_list]
+
+    # JSON 응답
+    return jsonify(
+        {
+            "id": question.id,
+            "title": question.title,
+            "image": question.image.url if question.image else None,
+            "choices": choice_data,
+        }
+    )
+
+
+@routes.route("/questions/<int:question_id>", methods=["GET", "POST"])
+def get_question(question_id):
+    question = questions.get_question_by_id(question_id)
+    choice_list = choices.get_choices_by_question_id(question_id)
+    return jsonify({"question": question.to_dict(), "choices": [choice.to_dict() for choice in choice_list]})
+
+
+@routes.route("/choice/<int:question_id>", methods=["GET", "POST"])
+def get_choice_list(question_id):
+    choice_list = choices.get_choices_by_question_id(question_id)
+    return jsonify({"choices": [choice.to_dict() for choice in choice_list]})
+
+
+@routes.route("/questions/count", methods=["GET"])
+def count_question():
+    if request.method == "GET":
+        count = questions.get_question_count()
+        return jsonify({"total": count})
+
+
+@routes.route("/submit", methods=["GET", "POST"])
+def submit_answer():
+    if request.method == "POST":
+        for answer in request.get_json():
+            print(answer)
+            answers.submit_answer(data=answer)
+        user_id = int(request.get_json()[0]["userId"])
+        print(user_id)
+
+        return jsonify({"message": f"User: {user_id}'s answers Success Create"}), 201
+
+
+@routes.route("/image", methods=["GET", "POST"])
+def create_image():
+    if request.method == "POST":
+        try:
+            image = images.create_image()
+            return jsonify({"message": f"ID: {image.id} Image Success Create"}), 201
+
+        except ValueError:
+            return jsonify({"message": "error"}), 400
+
+
+@routes.route("/question", methods=["GET", "POST"])
+def create_questions():
+    if request.method == "POST":
+        try:
+            question = questions.create_question()
+            return (
+                jsonify(
+                    {"message": f"Title: {question.title} question Success Create"}
+                ),
+                201,
+            )
+
+        except ValueError:
+            return jsonify({"message": "error"}), 400
+
+
+@routes.route("/choice", methods=["GET", "POST"])
+def create_choice():
+    if request.method == "POST":
+        try:
+            choice = choices.create_choice()
+            return (
+                jsonify(
+                    {"message": f"Content: {choice.content} choice Success Create"}
+                ),
+                201,
+            )
+
+        except ValueError:
+            return jsonify({"message": "error"}), 400
+
+

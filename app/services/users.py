@@ -1,13 +1,27 @@
+from flask import jsonify, request
+
 from app.models import User
 from config import db
-from flask import abort
 
 
-def create_user(name, age, gender, email):
-    """
-    사용자를 생성하는 함수.
+def create_user():
+    data = request.get_json()
 
-    Args:
-        name (str): 사용자 이름.
-        age (str): 사용자 나이 (Enum 값).
-        gender (str): 사용자 성별
+    user = User(
+        name=data["name"], age=data["age"], gender=data["gender"], email=data["email"]
+    )
+
+    db.session.add(user)
+    db.session.commit()
+    return user
+
+
+def get_user():
+    data = request.get_json()
+    user = User.query.filter_by(email=data["email"]).first()
+    return jsonify(user.to_dict())
+
+
+def get_all_users():
+    users = User.query.all()
+    return jsonify([user.to_dict() for user in users])

@@ -1,4 +1,4 @@
-#!/Users/muk/Desktop/F3project/.venv/bin/python
+#!/Users/muk/Downloads/F3project/.venv/bin/python3.13
 # -*- coding: utf-8 -*-
 import re
 import sys
