@@ -2765,3 +2765,2184 @@ TypeError: list indices must be integers or slices, not str
 [2025-01-13 06:57:36 +0000] [221639] [INFO] Booting worker with pid: 221639
 [2025-01-13 06:57:36 +0000] [221642] [INFO] Booting worker with pid: 221642
 [2025-01-13 06:57:36 +0000] [221643] [INFO] Booting worker with pid: 221643
+[2025-04-28 06:19:34 +0000] [12365] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 06:19:34 +0000] [12365] [INFO] Listening at: http://127.0.0.1:8000 (12365)
+[2025-04-28 06:19:34 +0000] [12365] [INFO] Using worker: sync
+[2025-04-28 06:19:35 +0000] [12366] [INFO] Booting worker with pid: 12366
+[2025-04-28 06:19:35 +0000] [12367] [INFO] Booting worker with pid: 12367
+[2025-04-28 06:19:35 +0000] [12370] [INFO] Booting worker with pid: 12370
+[2025-04-28 06:19:35 +0000] [12371] [INFO] Booting worker with pid: 12371
+[2025-04-28 06:19:36 +0000] [12366] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:19:36 +0000] [12366] [INFO] Worker exiting (pid: 12366)
+[2025-04-28 06:19:36 +0000] [12367] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:19:36 +0000] [12367] [INFO] Worker exiting (pid: 12367)
+[2025-04-28 06:19:36 +0000] [12371] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:19:37 +0000] [12371] [INFO] Worker exiting (pid: 12371)
+[2025-04-28 06:19:37 +0000] [12370] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:19:37 +0000] [12370] [INFO] Worker exiting (pid: 12370)
+[2025-04-28 06:19:37 +0000] [12365] [ERROR] Worker (pid:12367) exited with code 3
+[2025-04-28 06:19:37 +0000] [12365] [ERROR] Worker (pid:12370) was sent SIGTERM!
+[2025-04-28 06:19:37 +0000] [12365] [ERROR] Worker (pid:12366) was sent SIGTERM!
+[2025-04-28 06:19:37 +0000] [12365] [ERROR] Worker (pid:12371) was sent SIGTERM!
+[2025-04-28 06:19:37 +0000] [12365] [ERROR] Shutting down: Master
+[2025-04-28 06:19:37 +0000] [12365] [ERROR] Reason: Worker failed to boot.
+[2025-04-28 06:33:13 +0000] [12942] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 06:33:13 +0000] [12942] [INFO] Listening at: http://127.0.0.1:8000 (12942)
+[2025-04-28 06:33:13 +0000] [12942] [INFO] Using worker: sync
+[2025-04-28 06:33:13 +0000] [12943] [INFO] Booting worker with pid: 12943
+[2025-04-28 06:33:13 +0000] [12945] [INFO] Booting worker with pid: 12945
+[2025-04-28 06:33:13 +0000] [12947] [INFO] Booting worker with pid: 12947
+[2025-04-28 06:33:13 +0000] [12948] [INFO] Booting worker with pid: 12948
+[2025-04-28 06:33:14 +0000] [12943] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:33:14 +0000] [12943] [INFO] Worker exiting (pid: 12943)
+[2025-04-28 06:33:14 +0000] [12945] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:33:14 +0000] [12945] [INFO] Worker exiting (pid: 12945)
+[2025-04-28 06:33:15 +0000] [12947] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:33:15 +0000] [12947] [INFO] Worker exiting (pid: 12947)
+[2025-04-28 06:33:15 +0000] [12948] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:33:15 +0000] [12948] [INFO] Worker exiting (pid: 12948)
+[2025-04-28 06:33:15 +0000] [12942] [ERROR] Worker (pid:12943) exited with code 3
+[2025-04-28 06:33:15 +0000] [12942] [ERROR] Worker (pid:12945) was sent SIGTERM!
+[2025-04-28 06:33:15 +0000] [12942] [ERROR] Worker (pid:12948) was sent SIGTERM!
+[2025-04-28 06:33:15 +0000] [12942] [ERROR] Worker (pid:12947) was sent SIGTERM!
+[2025-04-28 06:33:15 +0000] [12942] [ERROR] Shutting down: Master
+[2025-04-28 06:33:15 +0000] [12942] [ERROR] Reason: Worker failed to boot.
+[2025-04-28 06:40:35 +0000] [13237] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 06:40:35 +0000] [13237] [INFO] Listening at: http://127.0.0.1:8000 (13237)
+[2025-04-28 06:40:35 +0000] [13237] [INFO] Using worker: sync
+[2025-04-28 06:40:35 +0000] [13239] [INFO] Booting worker with pid: 13239
+[2025-04-28 06:40:35 +0000] [13240] [INFO] Booting worker with pid: 13240
+[2025-04-28 06:40:35 +0000] [13241] [INFO] Booting worker with pid: 13241
+[2025-04-28 06:40:35 +0000] [13244] [INFO] Booting worker with pid: 13244
+[2025-04-28 06:40:37 +0000] [13239] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:40:37 +0000] [13239] [INFO] Worker exiting (pid: 13239)
+[2025-04-28 06:40:37 +0000] [13240] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:40:37 +0000] [13240] [INFO] Worker exiting (pid: 13240)
+[2025-04-28 06:40:37 +0000] [13241] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:40:37 +0000] [13241] [INFO] Worker exiting (pid: 13241)
+[2025-04-28 06:40:37 +0000] [13244] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ec2-user/F3project/wsgi.py", line 3, in <module>
+    application = create_app()
+                  ^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/__init__.py", line 29, in create_app
+    application.register_blueprint(routes)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 335, in register
+    deferred(state)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
+    lambda s: s.add_url_rule(
+              ^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
+    self.app.add_url_rule(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/sansio/app.py", line 657, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: routes.get_question
+[2025-04-28 06:40:37 +0000] [13244] [INFO] Worker exiting (pid: 13244)
+[2025-04-28 06:40:37 +0000] [13237] [ERROR] Worker (pid:13239) exited with code 3
+[2025-04-28 06:40:37 +0000] [13237] [ERROR] Worker (pid:13240) was sent SIGTERM!
+[2025-04-28 06:40:37 +0000] [13237] [ERROR] Worker (pid:13244) was sent SIGTERM!
+[2025-04-28 06:40:37 +0000] [13237] [ERROR] Worker (pid:13241) was sent SIGTERM!
+[2025-04-28 06:40:37 +0000] [13237] [ERROR] Shutting down: Master
+[2025-04-28 06:40:37 +0000] [13237] [ERROR] Reason: Worker failed to boot.
+[2025-04-28 06:51:42 +0000] [13653] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 06:51:42 +0000] [13653] [INFO] Listening at: http://127.0.0.1:8000 (13653)
+[2025-04-28 06:51:42 +0000] [13653] [INFO] Using worker: sync
+[2025-04-28 06:51:42 +0000] [13654] [INFO] Booting worker with pid: 13654
+[2025-04-28 06:51:42 +0000] [13655] [INFO] Booting worker with pid: 13655
+[2025-04-28 06:51:42 +0000] [13657] [INFO] Booting worker with pid: 13657
+[2025-04-28 06:51:42 +0000] [13659] [INFO] Booting worker with pid: 13659
+[2025-04-28 06:52:32,508] ERROR in app: Exception on /image/main [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 18, in get_main_image
+    image = images.get_main_image()
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/services/images.py", line 35, in get_main_image
+    image = Image.query.filter_by(type="main").first()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2439, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-04-28 06:56:13,980] ERROR in app: Exception on /image/main [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 18, in get_main_image
+    image = images.get_main_image()
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/services/images.py", line 35, in get_main_image
+    image = Image.query.filter_by(type="main").first()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2439, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-04-28 06:56:48,176] ERROR in app: Exception on /image/main [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 18, in get_main_image
+    image = images.get_main_image()
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/services/images.py", line 35, in get_main_image
+    image = Image.query.filter_by(type="main").first()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2439, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-04-28 06:59:16 +0000] [13653] [INFO] Handling signal: term
+[2025-04-28 06:59:16 +0000] [13654] [INFO] Worker exiting (pid: 13654)
+[2025-04-28 06:59:16 +0000] [13655] [INFO] Worker exiting (pid: 13655)
+[2025-04-28 06:59:16 +0000] [13657] [INFO] Worker exiting (pid: 13657)
+[2025-04-28 06:59:16 +0000] [13659] [INFO] Worker exiting (pid: 13659)
+[2025-04-28 06:59:16 +0000] [13653] [ERROR] Worker (pid:13654) was sent SIGTERM!
+[2025-04-28 06:59:16 +0000] [13653] [ERROR] Worker (pid:13655) was sent SIGTERM!
+[2025-04-28 06:59:16 +0000] [13653] [INFO] Shutting down: Master
+[2025-04-28 06:59:33 +0000] [13958] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 06:59:33 +0000] [13958] [INFO] Listening at: http://127.0.0.1:8000 (13958)
+[2025-04-28 06:59:33 +0000] [13958] [INFO] Using worker: sync
+[2025-04-28 06:59:33 +0000] [13959] [INFO] Booting worker with pid: 13959
+[2025-04-28 06:59:33 +0000] [13960] [INFO] Booting worker with pid: 13960
+[2025-04-28 06:59:33 +0000] [13963] [INFO] Booting worker with pid: 13963
+[2025-04-28 06:59:33 +0000] [13961] [INFO] Booting worker with pid: 13961
+[2025-04-28 07:02:28 +0000] [14105] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 07:02:28 +0000] [14105] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2025-04-28 07:02:28 +0000] [14105] [ERROR] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2025-04-28 07:02:29 +0000] [14105] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2025-04-28 07:02:29 +0000] [14105] [ERROR] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2025-04-28 07:02:30 +0000] [14105] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2025-04-28 07:02:30 +0000] [14105] [ERROR] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2025-04-28 07:02:31 +0000] [14105] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2025-04-28 07:02:31 +0000] [14105] [ERROR] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2025-04-28 07:02:32 +0000] [14105] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2025-04-28 07:02:32 +0000] [14105] [ERROR] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2025-04-28 07:02:33 +0000] [14105] [ERROR] Can't connect to ('127.0.0.1', 8000)
+[2025-04-28 07:02:52,811] ERROR in app: Exception on /image/main [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 18, in get_main_image
+    image = images.get_main_image()
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/services/images.py", line 35, in get_main_image
+    image = Image.query.filter_by(type="main").first()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2439, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-04-28 07:03:32 +0000] [13958] [INFO] Handling signal: term
+[2025-04-28 07:03:32 +0000] [13959] [INFO] Worker exiting (pid: 13959)
+[2025-04-28 07:03:32 +0000] [13960] [INFO] Worker exiting (pid: 13960)
+[2025-04-28 07:03:32 +0000] [13961] [INFO] Worker exiting (pid: 13961)
+[2025-04-28 07:03:32 +0000] [13963] [INFO] Worker exiting (pid: 13963)
+[2025-04-28 07:03:32 +0000] [13958] [ERROR] Worker (pid:13959) was sent SIGTERM!
+[2025-04-28 07:03:32 +0000] [13958] [ERROR] Worker (pid:13960) was sent SIGTERM!
+[2025-04-28 07:03:32 +0000] [13958] [ERROR] Worker (pid:13961) was sent SIGTERM!
+[2025-04-28 07:03:32 +0000] [13958] [INFO] Shutting down: Master
+[2025-04-28 07:09:21 +0000] [14406] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 07:09:21 +0000] [14406] [INFO] Listening at: http://127.0.0.1:8000 (14406)
+[2025-04-28 07:09:21 +0000] [14406] [INFO] Using worker: sync
+[2025-04-28 07:09:21 +0000] [14408] [INFO] Booting worker with pid: 14408
+[2025-04-28 07:09:21 +0000] [14411] [INFO] Booting worker with pid: 14411
+[2025-04-28 07:09:21 +0000] [14412] [INFO] Booting worker with pid: 14412
+[2025-04-28 07:09:21 +0000] [14413] [INFO] Booting worker with pid: 14413
+[2025-04-28 07:09:43,719] ERROR in app: Exception on /image/main [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 17, in get_main_image
+    image = images.get_main_image()
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/services/images.py", line 35, in get_main_image
+    image = Image.query.filter_by(type="main").first()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2439, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-04-28 07:10:12,551] ERROR in app: Exception on /image [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+TypeError: The view function for 'routes.create_image' did not return a valid response. The function either returned None or ended without a return statement.
+[2025-04-28 07:10:21,625] ERROR in app: Exception on /signup [POST]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 24, in signup_page
+    user = users.create_user()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/services/users.py", line 10, in create_user
+    user = User(
+           ^^^^^
+  File "<string>", line 4, in __init__
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state.py", line 571, in _initialize_instance
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state.py", line 569, in _initialize_instance
+    manager.original_init(*mixed[1:], **kwargs)
+  File "/home/ec2-user/F3project/app/models.py", line 39, in __init__
+    if User.query.filter_by(email=email).first():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2439, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-04-28 07:10:24,479] ERROR in app: Exception on /signup [POST]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 24, in signup_page
+    user = users.create_user()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/services/users.py", line 10, in create_user
+    user = User(
+           ^^^^^
+  File "<string>", line 4, in __init__
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state.py", line 571, in _initialize_instance
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state.py", line 569, in _initialize_instance
+    manager.original_init(*mixed[1:], **kwargs)
+  File "/home/ec2-user/F3project/app/models.py", line 39, in __init__
+    if User.query.filter_by(email=email).first():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2439, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 979, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 268, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-04-28 07:18:36 +0000] [14406] [INFO] Handling signal: term
+[2025-04-28 07:18:36 +0000] [14408] [INFO] Worker exiting (pid: 14408)
+[2025-04-28 07:18:36 +0000] [14411] [INFO] Worker exiting (pid: 14411)
+[2025-04-28 07:18:36 +0000] [14412] [INFO] Worker exiting (pid: 14412)
+[2025-04-28 07:18:36 +0000] [14413] [INFO] Worker exiting (pid: 14413)
+[2025-04-28 07:18:36 +0000] [14406] [ERROR] Worker (pid:14408) was sent SIGTERM!
+[2025-04-28 07:18:36 +0000] [14406] [ERROR] Worker (pid:14411) was sent SIGTERM!
+[2025-04-28 07:18:36 +0000] [14406] [INFO] Shutting down: Master
+[2025-04-28 07:18:49 +0000] [14774] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 07:18:49 +0000] [14774] [INFO] Listening at: http://127.0.0.1:8000 (14774)
+[2025-04-28 07:18:49 +0000] [14774] [INFO] Using worker: sync
+[2025-04-28 07:18:49 +0000] [14776] [INFO] Booting worker with pid: 14776
+[2025-04-28 07:18:49 +0000] [14779] [INFO] Booting worker with pid: 14779
+[2025-04-28 07:18:49 +0000] [14781] [INFO] Booting worker with pid: 14781
+[2025-04-28 07:18:49 +0000] [14782] [INFO] Booting worker with pid: 14782
+[2025-04-28 07:19:30,584] ERROR in app: Exception on /submit [POST]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 93, in submit_answer
+    answers.submit_answer(data=answer)
+  File "/home/ec2-user/F3project/app/services/answers.py", line 20, in submit_answer
+    user_id=int(data["userId"]),
+                ~~~~^^^^^^^^^^
+KeyError: 'userId'
+[2025-04-28 07:22:53 +0000] [14774] [INFO] Handling signal: term
+[2025-04-28 07:22:53 +0000] [14776] [INFO] Worker exiting (pid: 14776)
+[2025-04-28 07:22:53 +0000] [14779] [INFO] Worker exiting (pid: 14779)
+[2025-04-28 07:22:53 +0000] [14781] [INFO] Worker exiting (pid: 14781)
+[2025-04-28 07:22:53 +0000] [14782] [INFO] Worker exiting (pid: 14782)
+[2025-04-28 07:22:53 +0000] [14774] [ERROR] Worker (pid:14776) was sent SIGTERM!
+[2025-04-28 07:22:54 +0000] [14774] [ERROR] Worker (pid:14779) was sent SIGTERM!
+[2025-04-28 07:22:54 +0000] [14774] [INFO] Shutting down: Master
+[2025-04-28 07:22:58 +0000] [14959] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 07:22:58 +0000] [14959] [INFO] Listening at: http://127.0.0.1:8000 (14959)
+[2025-04-28 07:22:58 +0000] [14959] [INFO] Using worker: sync
+[2025-04-28 07:22:58 +0000] [14961] [INFO] Booting worker with pid: 14961
+[2025-04-28 07:22:58 +0000] [14964] [INFO] Booting worker with pid: 14964
+[2025-04-28 07:22:58 +0000] [14965] [INFO] Booting worker with pid: 14965
+[2025-04-28 07:22:58 +0000] [14966] [INFO] Booting worker with pid: 14966
+[2025-04-28 07:23:33,203] ERROR in app: Exception on /submit [POST]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 117, in submit_answer
+    answers.submit_answer(data=answer_data)
+  File "/home/ec2-user/F3project/app/services/answers.py", line 20, in submit_answer
+    user_id=int(data["userId"]),
+                ~~~~^^^^^^^^^^
+KeyError: 'userId'
+[2025-04-28 07:24:23,662] ERROR in app: Exception on /submit [POST]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 117, in submit_answer
+    answers.submit_answer(data=answer_data)
+  File "/home/ec2-user/F3project/app/services/answers.py", line 20, in submit_answer
+    user_id=int(data["userId"]),
+                ~~~~^^^^^^^^^^
+KeyError: 'userId'
+[2025-04-28 07:29:19 +0000] [14959] [INFO] Handling signal: term
+[2025-04-28 07:29:19 +0000] [14961] [INFO] Worker exiting (pid: 14961)
+[2025-04-28 07:29:19 +0000] [14964] [INFO] Worker exiting (pid: 14964)
+[2025-04-28 07:29:19 +0000] [14965] [INFO] Worker exiting (pid: 14965)
+[2025-04-28 07:29:19 +0000] [14966] [INFO] Worker exiting (pid: 14966)
+[2025-04-28 07:29:20 +0000] [14959] [ERROR] Worker (pid:14961) was sent SIGTERM!
+[2025-04-28 07:29:20 +0000] [14959] [ERROR] Worker (pid:14964) was sent SIGTERM!
+[2025-04-28 07:29:20 +0000] [14959] [ERROR] Worker (pid:14965) was sent SIGTERM!
+[2025-04-28 07:29:20 +0000] [14959] [INFO] Shutting down: Master
+[2025-04-28 07:29:26 +0000] [15266] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 07:29:26 +0000] [15266] [INFO] Listening at: http://127.0.0.1:8000 (15266)
+[2025-04-28 07:29:26 +0000] [15266] [INFO] Using worker: sync
+[2025-04-28 07:29:26 +0000] [15268] [INFO] Booting worker with pid: 15268
+[2025-04-28 07:29:26 +0000] [15271] [INFO] Booting worker with pid: 15271
+[2025-04-28 07:29:26 +0000] [15272] [INFO] Booting worker with pid: 15272
+[2025-04-28 07:29:26 +0000] [15273] [INFO] Booting worker with pid: 15273
+[2025-04-28 07:30:06,309] ERROR in app: Exception on /submit [POST]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 112, in submit_answer
+    answers.submit_answer(answer_data)
+  File "/home/ec2-user/F3project/app/services/answers.py", line 20, in submit_answer
+    user_id=int(data["userId"]),
+                ~~~~^^^^^^^^^^
+KeyError: 'userId'
+[2025-04-28 07:30:46,127] ERROR in app: Exception on /submit [POST]
+Traceback (most recent call last):
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/F3project/app/routes.py", line 112, in submit_answer
+    answers.submit_answer(answer_data)
+  File "/home/ec2-user/F3project/app/services/answers.py", line 20, in submit_answer
+    user_id=int(data["userId"]),
+                ~~~~^^^^^^^^^^
+KeyError: 'userId'
+[2025-04-28 07:33:22 +0000] [15266] [INFO] Handling signal: term
+[2025-04-28 07:33:22 +0000] [15268] [INFO] Worker exiting (pid: 15268)
+[2025-04-28 07:33:22 +0000] [15271] [INFO] Worker exiting (pid: 15271)
+[2025-04-28 07:33:22 +0000] [15272] [INFO] Worker exiting (pid: 15272)
+[2025-04-28 07:33:22 +0000] [15273] [INFO] Worker exiting (pid: 15273)
+[2025-04-28 07:33:22 +0000] [15266] [ERROR] Worker (pid:15268) was sent SIGTERM!
+[2025-04-28 07:33:22 +0000] [15266] [ERROR] Worker (pid:15271) was sent SIGTERM!
+[2025-04-28 07:33:22 +0000] [15266] [ERROR] Worker (pid:15272) was sent SIGTERM!
+[2025-04-28 07:33:22 +0000] [15266] [INFO] Shutting down: Master
+[2025-04-28 07:33:29 +0000] [15507] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 07:33:29 +0000] [15507] [INFO] Listening at: http://127.0.0.1:8000 (15507)
+[2025-04-28 07:33:29 +0000] [15507] [INFO] Using worker: sync
+[2025-04-28 07:33:29 +0000] [15508] [INFO] Booting worker with pid: 15508
+[2025-04-28 07:33:29 +0000] [15511] [INFO] Booting worker with pid: 15511
+[2025-04-28 07:33:29 +0000] [15512] [INFO] Booting worker with pid: 15512
+[2025-04-28 07:33:29 +0000] [15513] [INFO] Booting worker with pid: 15513
