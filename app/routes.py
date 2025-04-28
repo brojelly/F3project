@@ -36,33 +36,27 @@ def signup_page():
             return jsonify({"message": "이미 존재하는 계정 입니다."}), 400
 
 
-@routes.route("/question/<int:question_id>", methods=["GET", "POST"])
-def question_page(question_id):
-    """
-    특정 질문 ID에 대한 질문과 선택지를 반환합니다.
-    """
-    # 질문 데이터 가져오기
+@routes.route("/questions/<int:question_id>", methods=["GET", "POST"])
+def get_question(question_id):
     question = questions.get_question_by_id(question_id)
     if not question:
         return jsonify({"error": "질문을 찾을 수 없습니다."}), 404
 
-    # 선택지 데이터 가져오기
-    choice_list = (
-        Choices.query.filter_by(question_id=question_id, is_active=True)
-        .order_by(Choices.sqe.desc())
-        .all()
-    )
-    choice_data = [choice.to_dict() for choice in choice_list]
+    choice_list = choices.get_choices_by_question_id(question_id)
 
-    # JSON 응답
-    return jsonify(
-        {
-            "id": question.id,
-            "title": question.title,
-            "image": question.image.url if question.image else None,
-            "choices": choice_data,
-        }
-    )
+    return jsonify({
+        "id": question.id,
+        "title": question.title,
+        "image": question.image.url if question.image else None,
+        "choices": [
+            {
+                "id": choice.id,
+                "content": choice.content,
+                "is_active": choice.is_active
+            } for choice in choice_list
+        ]
+    })
+
 
 
 @routes.route("/questions/<int:question_id>", methods=["GET", "POST"])
